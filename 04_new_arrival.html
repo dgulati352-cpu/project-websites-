@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Optics | New Arrivals 2026</title>
+    <style>
+        :root {
+            --bg-cream: #F9F7F2;
+            --off-white: #FAF9F6;
+            --soft-beige: #E6DED3;
+            --cocoa: #2D1B14;
+            --tan: #A68966;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(45, 27, 20, 0.05);
+            --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--cocoa);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        /* ===================== TOP BAR ===================== */
+
+.top-bar{
+background:#f6f1e7;
+color:#444;
+font-size:13px;
+padding:8px 0;
+}
+
+.top-bar-container{
+max-width:1400px;
+margin:auto;
+text-align:right;
+padding:0 20px;
+}
+
+.top-bar a{
+color:#444;
+text-decoration:none;
+margin:0 8px;
+}
+
+.top-bar a:hover{
+color:#8c7a5b;
+}
+
+
+/* ===================== HEADER ===================== */
+
+.main-header{
+background:#f8f8f7;
+border-bottom:1px solid #e6e6e6;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.main-header-container{
+max-width:1400px;
+margin:auto;
+padding:0 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:75px;
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+color:#8c7a5b;
+text-decoration:none;
+
+display:flex;
+align-items:center;
+gap:1px;
+}
+
+.logo img{
+width:110px;
+height:75px;
+}
+
+
+/* ===================== NAVIGATION ===================== */
+
+.main-nav{
+display:flex;
+gap:35px;
+align-items:center;
+}
+
+.main-nav a{
+text-decoration:none;
+color:#444;
+font-weight:500;
+}
+
+.main-nav a:hover{
+color:#8c7a5b;
+}
+
+
+/* ===================== DROPDOWN ===================== */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown-menu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:#ffffff;
+list-style:none;
+min-width:200px;
+border-radius:8px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+.dropdown-menu li a{
+display:block;
+padding:10px 18px;
+font-size:14px;
+}
+
+.dropdown-menu li a:hover{
+background:#f6f1e7;
+color:#8c7a5b;
+}
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
+        
+        nav ul { display: flex; list-style: none; gap: 40px; }
+        
+        nav a { 
+            text-decoration: none; 
+            color: var(--cocoa); 
+            font-size: 0.8rem; 
+            letter-spacing: 2px; 
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+        
+        nav a:hover { color: var(--tan); }
+
+        /* Hero Section */
+        .hero {
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, rgba(148, 148, 147, 0.9), rgba(195, 195, 194, 0)),
+                        url(img6.jpg);
+            background-size: cover;
+            background-position: center;
+            padding: 0 8%;
+        }
+
+        .hero-content { max-width: 600px; }
+        .hero-content h1 { font-size: 5rem; line-height: 1.1; margin-bottom: 20px; }
+        .hero-content p { font-size: 1.1rem; margin-bottom: 35px; color: var(--cocoa); letter-spacing: 1px; }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background: var(--cocoa);
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .btn:hover { background: var(--tan); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+        /* New Arrivals Grid (10 Items) */
+        section { padding: 100px 8%; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 3rem; margin-bottom: 10px; }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 4px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .img-wrap {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background: #fdfdfd;
+        }
+
+        .card img { 
+            width: 85%; 
+            transition: var(--transition); 
+            mix-blend-mode: multiply;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(45, 27, 20, 0.7);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+        .card:hover img { transform: scale(1.1); }
+       
+
+        .price { font-weight: 600; color: var(--tan); margin-top: 10px; }
+
+        /* Video Section */
+        .video-reveal {
+            background: var(--soft-beige);
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .v-container { flex: 1; min-width: 300px; border: 15px solid var(--white); box-shadow: var(--shadow); }
+        .v-text { flex: 1; min-width: 300px; padding: 40px; }
+        .img{ width: 100%;height: 550px; display: block; }
+
+        /* Categories Section */
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .cat-item {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            color: var(--white);
+            text-decoration: none;
+            position: relative;
+            transition: var(--transition);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .cat-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.6));
+            transition: var(--transition);
+        }
+
+        .cat-item h3 { position: relative; z-index: 1; letter-spacing: 2px; }
+        .cat-item:hover { transform: scale(0.98); }
+        .cat-item:hover::before { background: rgba(166, 137, 102, 0.4); }
+
+        footer { padding: 60px 8%; text-align: center; border-top: 1px solid var(--soft-beige); opacity: 0.6; font-size: 0.8rem; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+    <!-- ===================== TOP BAR ===================== -->
+<div class="top-bar">
+  <div class="top-bar-container">
+    <a href="01_about_us.html">About us</a>
+    <a href="02_contact_us.html">Contact Us</a>
+    <a href="03_eye_care.html">Eye Care</a>
+    <a href="04_new_arrival.html">New Arrivals</a>
+    <a href="05_best_seller.html">Best Sellers</a>
+    <a href="06_offline_store.html">Offline Stores</a>
+    <a href="07_book_app.html">Book Appointment</a>
+    <a href="08_privacy_policy.html">Privacy Policy</a>
+    <a href="09_help.html">Help</a>
+  </div>
+</div>
+
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="main-header">
+  <div class="main-header-container">
+    <a href="index main.html" class="logo">
+  <img src="img0.jpeg" alt="Logo">
+  WAHEGURU AURA OPTIX
+</a>
+    <nav class="main-nav">
+      <div class="dropdown">
+        <a href="#">EYEGLASSES</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Eyeglasses">Men's Eyeglasses</a></li>
+          <li><a href="#Eyeglasses">Women's Eyeglasses</a></li>
+          <li><a href="#Eyeglasses">Computer Glasses</a></li>
+          <li><a href="#Eyeglasses">Kids' Eyeglasses</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">SUNGLASSES</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Sunglasses">Men's Sunglasses</a></li>
+          <li><a href="#Sunglasses">Women's Sunglasses</a></li>
+          <li><a href="#Sunglasses">Power Sunglasses</a></li>
+          <li><a href="#Sunglasses">Sports Sunglasses</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">CONTACTS</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Contacts">Daily Disposable</a></li>
+          <li><a href="#Contacts">Monthly Disposable</a></li>
+          <li><a href="#Contacts">Colored Contact Lenses</a></li>
+          <li><a href="#Contacts">Contact Lens Solution & Care</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">SPECIAL POWER</a>
+        <ul class="dropdown-menu">
+          <li><a href="#SpecialPower">High Power Lenses</a></li>
+          <li><a href="#SpecialPower">Cylinder Power Lenses</a></li>
+          <li><a href="#SpecialPower">Photochromic Lenses</a></li>
+          <li><a href="#SpecialPower">Blue Cut + UV Protection</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">STORES</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Stores">Find a Store Near You</a></li>
+          <li><a href="#Stores">Official Stores</a></li>
+          <li><a href="#Stores">Book Eye Test Appointment</a></li>
+          <li><a href="#Stores">Home Eye Check-up</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="header-icons">
+      <a href="#" class="cart-icon">🛒</a>
+    </div>
+  </div>
+</header>
+
+
+
+    <header class="hero">
+        <div class="hero-content">
+            <p>SPRING / SUMMER 2026</p>
+            <h1>New<br>Arrivals</h1>
+            <p>Discover the latest trends in luxury eyewear crafted for the modern visionary.</p>
+            <a href="#shop" class="btn">Shop Now</a>
+        </div>
+    </header>
+
+    <section id="shop">
+        <div class="section-title">
+            <h2>The Archive</h2>
+            <p>Hand-selected frames for the season.</p>
+        </div>
+        
+        <div class="product-grid">
+            <div class="card">
+                <div class="img-wrap">
+                    <img src="img7.jpg" alt="1"></div>
+                
+                <h3>Heritage Havana</h3>
+                <p class="price">$295.00</p>
+            </div>
+            <div class="card">
+                <div class="img-wrap"><img src="img8.jpg" alt="2"></div>
+               
+                <h3>Obsidian Matte</h3>
+                <p class="price">$320.00</p>
+            </div>
+            <div class="card">
+                <div class="img-wrap"><img src="img9.jpg" alt="3"></div>
+                
+                <h3>Crystal Aviation</h3>
+                <p class="price">$275.00</p>
+            </div>
+            <div class="card">
+                <div class="img-wrap"><img src="img10.jpg" alt="4"></div>
+                
+                <h3>Rose Gold Round</h3>
+                <p class="price">$310.00</p>
+            </div>
+            <div class="card">
+                <div class="img-wrap"><img src="img11.jpg" alt="5"></div>
+               
+                <h3>Stealth Carbon</h3>
+                <p class="price">$350.00</p>
+            </div>
+            <div class="card">
+                <div class="img-wrap"><img src="img12.jpg" alt="6"></div>
+              
+                <h3>Marble Tortoise</h3>
+                <p class="price">$290.00</p>
+            </div>
+            <div class="card">
+                <div class="img-wrap"><img src="img13.jpg" alt="7"></div>
+              
+                <h3>Vintage Oak</h3>
+                <p class="price">$340.00</p>
+            </div>
+
+
+            <div class="card">
+                <div class="img-wrap"><img src="img14.jpg" alt="10"></div>
+                
+                <h3>Desert Sand</h3>
+                <p class="price">$315.00</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-reveal">
+        <div class="v-container">
+            <img src="img15.jpg" class="img">
+        </div>
+        <div class="v-text">
+            <h2>The Craft</h2>
+            <p>Every frame is a testament to precision and design. Watch how we blend architectural integrity with high-fashion aesthetics to create eyewear that lasts a lifetime.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">
+            <h2>Categories</h2>
+        </div>
+        <div class="cat-grid">
+            <a href="#" class="cat-item" style="background-image: url('img16.jpg')"><h3>Round</h3></a>
+            <a href="#" class="cat-item" style="background-image: url('img17.jpg')"><h3>Square</h3></a>
+            <a href="#" class="cat-item" style="background-image: url('img18.jpg')"><h3>Cat Eye</h3></a>
+            <a href="#" class="cat-item" style="background-image: url('img19.jpg')"><h3>Aviator</h3></a>
+            <a href="#" class="cat-item" style="background-image: url('img20.jpg')"><h3>Rimless</h3></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 WAHEGURU AURA OPTIX• HANDCRAFTED QUALITY</p>
+    </footer>
+
+</body>
+</html>

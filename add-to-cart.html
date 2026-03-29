@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add To Cart</title>
+  <style>
+    :root {
+      --bg: #f4efe8;
+      --card: #fffdf9;
+      --ink: #1e1b18;
+      --muted: #6a625a;
+      --line: #d8cfc4;
+      --accent: #0f766e;
+      --accent-dark: #0b5f59;
+      --focus: #f59e0b;
+      --danger: #b91c1c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, #f8d9b4 0%, transparent 28%),
+        radial-gradient(circle at 90% 80%, #b8e4dc 0%, transparent 32%),
+        var(--bg);
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .wrapper {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #1f2937, #334155);
+      color: #fff;
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      letter-spacing: 0.02em;
+    }
+
+    .hero p {
+      margin: 0;
+      color: #d1d5db;
+      font-size: 0.95rem;
+    }
+
+    .cart-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 12px 26px rgba(42, 31, 18, 0.12);
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .card-header h2 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .card-header small {
+      color: var(--muted);
+    }
+
+    form {
+      padding: 22px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .section {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    .section h3 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      color: var(--muted);
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid #c8bfb2;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: 2px solid var(--focus);
+      outline-offset: 1px;
+      border-color: transparent;
+    }
+
+    .toggle-options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .toggle-item {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fffcf8;
+    }
+
+    .toggle-item input {
+      width: auto;
+      margin: 0;
+    }
+
+    .summary {
+      display: grid;
+      gap: 8px;
+      background: #f8fafc;
+      border: 1px dashed #b2c0d2;
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.95rem;
+    }
+
+    .total {
+      font-weight: 700;
+      color: #111827;
+      padding-top: 8px;
+      border-top: 1px solid #d7e0eb;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.82rem;
+      max-width: 520px;
+    }
+
+    .cart-btn {
+      border: 0;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      border-radius: 999px;
+      padding: 12px 24px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .cart-btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .cart-btn:active {
+      transform: translateY(0);
+    }
+
+    .required {
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    .link-row {
+      margin-top: 8px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .link-row a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .link-row a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 14px;
+      }
+
+      .hero,
+      .card-header,
+      form {
+        padding: 16px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .actions {
+        align-items: stretch;
+      }
+
+      .cart-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <section class="hero" aria-label="Add to cart header">
+      <h1>Add To Cart</h1>
+      <p>Fill this quick form to add your frame and lens preferences to cart.</p>
+    </section>
+
+    <section class="cart-card" aria-label="Add to cart form">
+      <div class="card-header">
+        <h2>Cart Details Form</h2>
+        <small>Fields marked with <span class="required">*</span> are required.</small>
+      </div>
+
+      <form action="payment.html" method="get">
+        <div class="section">
+          <h3>Product Details</h3>
+          <div class="grid">
+            <div>
+              <label for="productName">Product Name <span class="required">*</span></label>
+              <input id="productName" name="productName" type="text" required placeholder="Enter frame name">
+            </div>
+            <div>
+              <label for="sku">SKU / Model Code</label>
+              <input id="sku" name="sku" type="text" placeholder="Example: OA-RECT-102">
+            </div>
+            <div>
+              <label for="quantity">Quantity <span class="required">*</span></label>
+              <input id="quantity" name="quantity" type="number" min="1" value="1" required>
+            </div>
+            <div>
+              <label for="frameSize">Frame Size</label>
+              <select id="frameSize" name="frameSize">
+                <option value="">Select</option>
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Lens Preferences</h3>
+          <div class="toggle-options" role="radiogroup" aria-label="Lens type">
+            <label class="toggle-item" for="singleVision">
+              <input id="singleVision" type="radio" name="lensType" value="single-vision" checked>
+              Single Vision
+            </label>
+            <label class="toggle-item" for="progressive">
+              <input id="progressive" type="radio" name="lensType" value="progressive">
+              Progressive
+            </label>
+            <label class="toggle-item" for="blueCut">
+              <input id="blueCut" type="radio" name="lensType" value="blue-cut">
+              Blue Cut + UV
+            </label>
+          </div>
+
+          <div class="grid" style="margin-top: 12px;">
+            <div>
+              <label for="leftPower">Left Eye Power</label>
+              <input id="leftPower" name="leftPower" type="text" placeholder="Example: -1.25">
+            </div>
+            <div>
+              <label for="rightPower">Right Eye Power</label>
+              <input id="rightPower" name="rightPower" type="text" placeholder="Example: -1.00">
+            </div>
+            <div class="full">
+              <label for="notes">Prescription Notes</label>
+              <textarea id="notes" name="notes" placeholder="Any extra information for lens fitting"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Price Summary</h3>
+          <div class="summary">
+            <div class="row"><span>Frame</span><strong>INR 1,699</strong></div>
+            <div class="row"><span>Lens Add-on</span><strong>INR 499</strong></div>
+            <div class="row"><span>Estimated Tax</span><strong>INR 180</strong></div>
+            <div class="row total"><span>Estimated Total</span><span>INR 2,378</span></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <p class="note">After adding this item, you can continue shopping or proceed to payment.</p>
+          <button class="cart-btn" type="submit">ADD ITEM TO CART</button>
+        </div>
+
+        <div class="link-row">
+          <a href="payment.html">Proceed To Payment</a>
+          <a href="eyeglesses.html">Continue Shopping</a>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+</html>

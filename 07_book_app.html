@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reserve Your Consultation | Luxe Optical</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+        background: #fdfbf7;
+        color: #2c241e;
+        line-height: 1.6;
+    }
+    /* ===================== TOP BAR ===================== */
+
+.top-bar{
+background:#f6f1e7;
+color:#444;
+font-size:13px;
+padding:8px 0;
+}
+
+.top-bar-container{
+max-width:1400px;
+margin:auto;
+text-align:right;
+padding:0 20px;
+}
+
+.top-bar a{
+color:#444;
+text-decoration:none;
+margin:0 8px;
+}
+
+.top-bar a:hover{
+color:#8c7a5b;
+}
+
+
+/* ===================== HEADER ===================== */
+
+.main-header{
+background:#f8f8f7;
+border-bottom:1px solid #e6e6e6;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.main-header-container{
+max-width:1400px;
+margin:auto;
+padding:0 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:75px;
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+color:#8c7a5b;
+text-decoration:none;
+
+display:flex;
+align-items:center;
+gap:1px;
+}
+
+.logo img{
+width:110px;
+height:75px;
+}
+
+
+/* ===================== NAVIGATION ===================== */
+
+.main-nav{
+display:flex;
+gap:35px;
+align-items:center;
+}
+
+.main-nav a{
+text-decoration:none;
+color:#444;
+font-weight:500;
+}
+
+.main-nav a:hover{
+color:#8c7a5b;
+}
+
+
+/* ===================== DROPDOWN ===================== */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown-menu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:#ffffff;
+list-style:none;
+min-width:200px;
+border-radius:8px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+.dropdown-menu li a{
+display:block;
+padding:10px 18px;
+font-size:14px;
+}
+
+.dropdown-menu li a:hover{
+background:#f6f1e7;
+color:#8c7a5b;
+}
+
+    h1, h2 {
+        font-family: 'Playfair Display', serif;
+        letter-spacing: 1px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+        text-align: center;
+        color: #d3d3d3;
+    }
+
+    .hero-text {
+        background: #2c241e;
+        padding: 40px 60px;
+        /* backdrop-filter: blur(10px); */
+        /* border-radius: 2px; */
+    }
+
+    .hero h1 { 
+        font-size:50px; 
+        margin-bottom: 10px;
+     }
+    .hero p { 
+        font-weight: 300; 
+        letter-spacing: 3px; 
+        text-transform: uppercase;
+        font-size: 0.9rem; }
+
+    /* BOOKING FORM */
+    .section { 
+        padding: 80px 20px; 
+        text-align: center; 
+    }
+    .section h2 {
+         font-size:40px; 
+         margin-bottom: 40px; 
+         color: #2c241e; 
+        }
+
+    .form-container {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 50px;
+        border-radius: 4px;
+        box-shadow: 0 20px 40px rgba(13, 10, 8, 0.08);
+        border: 1px solid #f1ece4;
+    }
+
+    .form-group { text-align: left; margin-bottom: 20px; }
+    
+    input, select, textarea {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #e2d9cc;
+        background: #fcfaf8;
+        border-radius: 0; /* Sharp edges for luxury look */
+        font-size: 0.9rem;
+        transition: all 0.4s ease;
+    }
+
+    input, select, textarea {
+        outline: none;
+        border-color: #d4b98f;
+        background: #fff;
+        /* box-shadow: 0 5px 15px rgba(212, 185, 143, 0.1); */
+    }
+
+    .btn {
+        width: 100%;
+        padding: 18px;
+        background: #2c241e;
+        color: #fff;
+        border: none;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        margin-top: 20px;
+    }
+
+    .btn:hover {
+        background: #d4b98f;
+        transform: translateY(-3px);
+    }
+
+  
+
+    /* FOOTER */
+    footer {
+        background: #2c241e;
+        color: #d4b98f;
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .footer-content p { font-size: 0.85rem; letter-spacing: 1px; margin: 10px 0; }
+    .footer-sep { border-top: 1px solid rgba(212, 185, 143, 0.2); width: 100px; margin: 20px auto; }
+</style>
+</head>
+
+<body>
+    <!-- ===================== TOP BAR ===================== -->
+<div class="top-bar">
+  <div class="top-bar-container">
+    <a href="01_about_us.html">About us</a>
+    <a href="02_contact_us.html">Contact Us</a>
+    <a href="03_eye_care.html">Eye Care</a>
+    <a href="04_new_arrival.html">New Arrivals</a>
+    <a href="05_best_seller.html">Best Sellers</a>
+    <a href="06_offline_store.html">Offline Stores</a>
+    <a href="07_book_app.html">Book Appointment</a>
+    <a href="08_privacy_policy.html">Privacy Policy</a>
+    <a href="09_help.html">Help</a>
+  </div>
+</div>
+
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="main-header">
+  <div class="main-header-container">
+    <a href="index main.html" class="logo">
+  <img src="img0.jpeg" alt="Logo">
+  WAHEGURU AURA OPTIX
+</a>
+    <nav class="main-nav">
+      <div class="dropdown">
+        <a href="#">EYEGLASSES</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Eyeglasses">Men's Eyeglasses</a></li>
+          <li><a href="#Eyeglasses">Women's Eyeglasses</a></li>
+          <li><a href="#Eyeglasses">Computer Glasses</a></li>
+          <li><a href="#Eyeglasses">Kids' Eyeglasses</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">SUNGLASSES</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Sunglasses">Men's Sunglasses</a></li>
+          <li><a href="#Sunglasses">Women's Sunglasses</a></li>
+          <li><a href="#Sunglasses">Power Sunglasses</a></li>
+          <li><a href="#Sunglasses">Sports Sunglasses</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">CONTACTS</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Contacts">Daily Disposable</a></li>
+          <li><a href="#Contacts">Monthly Disposable</a></li>
+          <li><a href="#Contacts">Colored Contact Lenses</a></li>
+          <li><a href="#Contacts">Contact Lens Solution & Care</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">SPECIAL POWER</a>
+        <ul class="dropdown-menu">
+          <li><a href="#SpecialPower">High Power Lenses</a></li>
+          <li><a href="#SpecialPower">Cylinder Power Lenses</a></li>
+          <li><a href="#SpecialPower">Photochromic Lenses</a></li>
+          <li><a href="#SpecialPower">Blue Cut + UV Protection</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">STORES</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Stores">Find a Store Near You</a></li>
+          <li><a href="#Stores">Official Stores</a></li>
+          <li><a href="#Stores">Book Eye Test Appointment</a></li>
+          <li><a href="#Stores">Home Eye Check-up</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="header-icons">
+      <a href="#" class="cart-icon">🛒</a>
+    </div>
+  </div>
+</header>
+
+<header class="hero">
+    <div class="hero-text">
+        <h1>Private Consultation</h1>
+        <p>Book Eye Care & Frame Selection</p>
+    </div>
+</header>
+
+<section class="section">
+    <h2>Schedule Your Visit</h2>
+    <div class="form-container">
+        <form action="#">
+            <div class="form-group">
+                <input type="text" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" placeholder="Mobile Number" required>
+            </div>
+            <div class="form-group">
+                <select required>
+                    <option value="" disabled selected>Nature of Consultation</option>
+                    <option>Comprehensive Eye Test</option>
+                    <option>Personal Styling Session</option>
+                    <option>Lens Technology Review</option>
+                    <option>Maintenance & Adjustments</option>
+                </select>
+            </div>
+            <div style="display: flex; gap: 15px;">
+                <input type="date" required>
+                <input type="time" required>
+            </div>
+            <textarea rows="3" placeholder="Special requirements or vision concerns..." style="margin-top: 20px;"></textarea>
+            
+            <button class="btn" type="submit">Request Appointment</button>
+        </form>
+    </div>
+</section>
+
+
+
+<footer>
+    <div class="footer-content">
+        <p>REFINING VISION SINCE 1994</p>
+        <div class="footer-sep"></div>
+        <p>📍 2026 WAHEGURU AURA OPTIX | 📞 +91 9876543210</p>
+        <p style="opacity: 0.6; font-size: 0.7rem; margin-top: 30px;">© 2026 LUXE OPTICAL. ALL RIGHTS RESERVED.</p>
+    </div>
+</footer>
+
+</body>
+</html>>

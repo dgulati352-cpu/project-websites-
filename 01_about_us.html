@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Waheguru Aura Optix</title>
+    <style>
+        /* BASE STYLES */
+        * { box-sizing: border-box; }
+        body { 
+            margin: 0; 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            color: #333; 
+            line-height: 1.7;
+            background-color: #fff;
+        }
+        /* ===================== TOP BAR ===================== */
+
+.top-bar{
+background:#f6f1e7;
+color:#444;
+font-size:13px;
+padding:8px 0;
+}
+
+.top-bar-container{
+max-width:1400px;
+margin:auto;
+text-align:right;
+padding:0 20px;
+}
+
+.top-bar a{
+color:#444;
+text-decoration:none;
+margin:0 8px;
+}
+
+.top-bar a:hover{
+color:#8c7a5b;
+}
+
+
+/* ===================== HEADER ===================== */
+
+.main-header{
+background:#f8f8f7;
+border-bottom:1px solid #e6e6e6;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.main-header-container{
+max-width:1400px;
+margin:auto;
+padding:0 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:75px;
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+color:#8c7a5b;
+text-decoration:none;
+
+display:flex;
+align-items:center;
+gap:1px;
+}
+
+.logo img{
+width:110px;
+height:75px;
+}
+
+
+/* ===================== NAVIGATION ===================== */
+
+.main-nav{
+display:flex;
+gap:35px;
+align-items:center;
+}
+
+.main-nav a{
+text-decoration:none;
+color:#444;
+font-weight:500;
+}
+
+.main-nav a:hover{
+color:#8c7a5b;
+}
+
+
+/* ===================== DROPDOWN ===================== */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown-menu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:#ffffff;
+list-style:none;
+min-width:200px;
+border-radius:8px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+.dropdown-menu li a{
+display:block;
+padding:10px 18px;
+font-size:14px;
+}
+
+.dropdown-menu li a:hover{
+background:#f6f1e7;
+color:#8c7a5b;
+}
+
+        /* TYPOGRAPHY & REUSABLE CLASSES */
+        h1, h2, h3 { 
+            color: #1a1a1a;
+            margin-top: 0; 
+            }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        section { 
+            padding: 80px 0; 
+        }
+        .text-center{ 
+            text-align: center; 
+        }
+        .accent-line  { 
+            width: 50px; 
+            height: 3px; 
+            background: #d4a373; 
+            margin: 20px auto; 
+            
+        }
+       
+
+        /* HERO SECTION */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(26, 26, 26, 0.5), rgba(0,0,0,0.5)), 
+                        url('img1.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+        }
+        .hero h1 { 
+            color: #fff;
+            font-size: 50px;
+            letter-spacing: -1px;
+         }
+
+        /* OUR STORY (Warli Integration) */
+        .story-flex {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+         
+        }
+        .story-text { 
+            flex: 1;
+            min-width: 300px; 
+        }
+        .story-img { 
+            flex: 1; 
+            min-width: 300px; 
+            border: 10px solid #f9f4ef;
+            box-shadow: 20px 20px 0px #d4a373;
+        }
+        .story-img img { 
+            width: 100%; 
+            display: block; 
+        }
+
+        /* WHY CHOOSE US - GRID */
+        .why-us { 
+            background-color: #f9f4ef; 
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .feature-item {
+            background: #fff;
+            padding: 40px;
+            border-bottom: 4px solid #d4a373;
+            transition: transform 0.3s ease;
+        }
+        .feature-item:hover { 
+            transform: translateY(-5px); 
+        }
+        .feature-item h3 { 
+            margin-bottom: 15px; 
+            font-size: 1.4rem; 
+        }
+
+        /* VISION SECTION */
+        .vision {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 100px 20px;
+        }
+        .vision h2 { 
+            color: #fff; 
+        }
+        .vision h2 {
+            font-size: 1.8rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        /* OPTICAL STORE GALLERY */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
+        }
+        .gallery-item { 
+            height: 400px; 
+            overflow: hidden; 
+            position: relative; 
+        }
+        .gallery-item img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: scale 0.5s ease;
+        }
+        .gallery-item:hover img { 
+            scale: 1.1; 
+        }
+
+ .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+        /* FOOTER / CTA */
+.cta { 
+    background: #d4a373; 
+    padding: 60px 0; 
+    color: #fff; 
+}
+.cta h2 {
+     color: #fff; 
+    }
+.btn {
+    display: inline-block;
+    padding: 18px 40px;
+    background: #1a1a1a;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    transition: 0.5s ease;
+}
+.btn:hover{
+    background: #f0ebe7;
+    color:#1a1a1a
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    section { padding: 50px 0; }
+}
+    </style>
+</head>
+<body>
+    <!-- ===================== TOP BAR ===================== -->
+<div class="top-bar">
+  <div class="top-bar-container">
+    <a href="01_about_us.html">About us</a>
+    <a href="02_contact_us.html">Contact Us</a>
+    <a href="03_eye_care.html">Eye Care</a>
+    <a href="04_new_arrival.html">New Arrivals</a>
+    <a href="05_best_seller.html">Best Sellers</a>
+    <a href="06_offline_store.html">Offline Stores</a>
+    <a href="07_book_app.html">Book Appointment</a>
+    <a href="08_privacy_policy.html">Privacy Policy</a>
+    <a href="09_help.html">Help</a>
+  </div>
+</div>
+
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="main-header">
+  <div class="main-header-container">
+    <a href="index main.html" class="logo">
+  <img src="img0.jpeg" alt="Logo">
+  WAHEGURU AURA OPTIX
+</a>
+    <nav class="main-nav">
+       <div class="dropdown">
+        <a href="#">EYEGLASSES</a>
+        <ul class="dropdown-menu">
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">SUNGLASSES</a>
+        <ul class="dropdown-menu">
+         
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">CONTACTS</a>
+        <ul class="dropdown-menu">
+    
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">SPECIAL POWER</a>
+        <ul class="dropdown-menu">
+       
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">STORES</a>
+        <ul class="dropdown-menu">
+        
+        </ul>
+      </div>
+    </nav>
+    <div class="header-icons">
+      <a href="#" class="cart-icon">🛒</a>
+    </div>
+  </div> 
+</header>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Seeing The World Clearly</h1>
+            <p>Where tradition meets the highest standards of optical care.</p>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="story-flex">
+            <div class="story-text">
+                <h1>Our Story</h1>
+                <div class="accent-line" style="margin-left:0;"></div>
+                <p>What started as a small local clinic has evolved into a sanctuary for eyewear enthusiasts. We believe that glasses are more than just lenses—they are a cultural statement. </p>
+                <p>Inspired by the rhythmic patterns of Warli Art, our flagship collections celebrate the geometry of ancient Indian tribal life. Every frame tells a story of community, nature, and the human spirit, designed for the modern individual who values depth over trends.</p>
+            </div>
+            <div class="story-img">
+                <img src="img2.png" alt="Warli Heritage Collection">
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <div class="container">
+            <div class="text-center">
+                <h1>Why Choose Us</h1>
+                <div class="accent-line"></div>
+                <p>We combine artisanal craftsmanship with clinical precision.</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Precision Diagnostics</h3>
+                    <p>Our store features the latest AI-driven eye mapping technology to ensure your prescription is accurate to the decimal.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Exclusive Curations</h3>
+                    <p>From the "Happster Warli Collection" to global luxury brands, we offer frames you won't find anywhere else.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Lifetime Adjustments</h3>
+                    <p>Buy once, stay comfortable forever. We provide free frame adjustments and ultrasonic cleaning for the life of your eyewear.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>UV400 Standards</h3>
+                    <p>Every lens we dispense includes premium UV protection and anti-fatigue coatings as a standard, not an upgrade.</p>
+                </div>
+                 <div class="feature-item">
+                    <h3>Eco-Conscious Craftsmanship</h3>
+                    <p>Our signature collections utilize bio-acetate and sustainably sourced materials, allowing you to wear high-fashion eyewear ..</p>
+                </div>
+                 <div class="feature-item">
+                    <h3>Precision Digital Fitting</h3>
+                    <p>We utilize advanced 3D facial mapping technology to ensure your frames sit perfectly on your nose bridge and ears,  fittings.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="vision text-center">
+        <div class="container">
+            <h2>Charting Our Vision</h2>
+            <div class="accent-line"></div>
+            <h2>
+                "To democratize luxury eyewear by infusing it with the soul of Indian art, ensuring every pair of eyes sees the world with clarity and pride."
+            </h2>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="text-center">
+            <h1>The Optical Studio</h1>
+            <div class="accent-line"></div>
+            <p>Experience a space designed for comfort and style.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="img3.jpg" alt="Store Front"></div>
+            <div class="gallery-item"><img src="img4.jpg" alt="Lens Lab"></div>
+            <div class="gallery-item"><img src="img5.jpg" alt="Consultation Area"></div>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <div class="container text-center">
+            <h2>In-Store Experience</h2>
+            <div class="accent-line"></div>
+            <p>Take a look inside our boutique shopping experience.</p>
+<div class="video-wrapper">
+    <iframe 
+        src="https://www.youtube.com/embed/tH-JxECXPpg?autoplay=1&mute=1&loop=1&playlist=tH-JxECXPpg&controls=0&rel=0" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+    </iframe>
+</div>
+        </div>
+    </section>
+
+    <section class="cta text-center">
+        <div class="container">
+            <h2>Find Your Perfect Pair</h2>
+            <p>Visit us today for a free eye checkup and style consultation.</p>
+            <a href="#" class="btn">Visit Our Store</a>
+        </div>
+    </section>
+
+</body>
+</html>

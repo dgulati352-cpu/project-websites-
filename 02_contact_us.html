@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Heritage Optical Studio</title>
+    <style>
+        /* BASIC SETUP */
+        * { 
+            box-sizing: border-box;
+         }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #fdfaf5; /* Light Creamish Off-White */
+            color: #4a3728; /* Deep Brown Text */
+            line-height: 1.6;
+        }
+        /* ===================== TOP BAR ===================== */
+
+.top-bar{
+background:#f6f1e7;
+color:#444;
+font-size:13px;
+padding:8px 0;
+}
+
+.top-bar-container{
+max-width:1400px;
+margin:auto;
+text-align:right;
+padding:0 20px;
+}
+
+.top-bar a{
+color:#444;
+text-decoration:none;
+margin:0 8px;
+}
+
+.top-bar a:hover{
+color:#8c7a5b;
+}
+
+
+/* ===================== HEADER ===================== */
+
+.main-header{
+background:#f8f8f7;
+border-bottom:1px solid #e6e6e6;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.main-header-container{
+max-width:1400px;
+margin:auto;
+padding:0 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:75px;
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+color:#8c7a5b;
+text-decoration:none;
+
+display:flex;
+align-items:center;
+gap:1px;
+}
+
+.logo img{
+width:110px;
+height:75px;
+}
+
+
+/* ===================== NAVIGATION ===================== */
+
+.main-nav{
+display:flex;
+gap:35px;
+align-items:center;
+}
+
+.main-nav a{
+text-decoration:none;
+color:#444;
+font-weight:500;
+}
+
+.main-nav a:hover{
+color:#8c7a5b;
+}
+
+
+/* ===================== DROPDOWN ===================== */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown-menu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:#ffffff;
+list-style:none;
+min-width:200px;
+border-radius:8px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+.dropdown-menu li a{
+display:block;
+padding:10px 18px;
+font-size:14px;
+}
+
+.dropdown-menu li a:hover{
+background:#f6f1e7;
+color:#8c7a5b;
+}
+
+        /* HEADER / HERO */
+        .contact-header {
+            background-color: #4a3728; /* Deep Brown */
+            color: #fdfaf5;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .contact-header h1 { 
+            margin: 0; 
+            font-size: 2.5rem; 
+            letter-spacing: 1px; 
+            } 
+        .contact-header p { 
+            margin-top: 10px;
+         }
+
+        /* MAIN CONTAINER */
+        .main-container {
+            max-width: 1000px;
+            margin: -40px auto 70px;/* Pulls the box up into the header */
+            display: flex;
+            /* flex-wrap: wrap; */
+            background: white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* LEFT SIDE: INFO */
+        .info-side {
+            flex: 1;
+            min-width: 300px;
+            background-color: #7c5630; /* Warm Tan/Brown accent */
+            color: white;
+            padding: 40px;
+        }
+        .info-side h2 { margin-top: 0; 
+            border-bottom: 2px solid rgba(255,255,255,0.3); 
+            padding-bottom: 10px;
+         }
+        .info-item {
+             margin-bottom: 25px; 
+            }
+        .info-item h4 {
+             margin-bottom: 5px; 
+             text-transform: uppercase; 
+             font-size: 0.8rem;
+              opacity: 0.8;
+             }
+        .info-item p { 
+            margin: 0;
+             font-size: 1.1rem; }
+
+        /* RIGHT SIDE: FORM */
+        .form-side {
+            flex: 1.5;
+            min-width: 350px;
+            padding: 40px;
+            background-color: #fff;
+        }
+        .form-side h2 { color: #4a3728; margin-top: 0; }
+        
+        .input-group {
+             margin-bottom: 20px;
+             }
+        .input-group label { display: block;
+             margin-bottom: 5px;
+              font-weight: bold;
+              font-size: 0.9rem;
+             }
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #fdfaf5;
+            font-size: 1rem;
+        }
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: #d4a373;
+        }
+
+        .submit-btn {
+            background-color: #4a3728;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover { background-color: #d4a373; }
+
+        /* DECORATIVE MAP AREA */
+        .map-area {
+            width: 100%;
+            height: 300px;
+            background-color: #eee;
+            border-radius: 12px;
+            margin-top: 40px;
+            overflow: hidden;
+        }
+        .map-area iframe { width: 100%; height: 100%; border: 0; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .main-container { margin: 20px; }
+            .contact-header { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===================== TOP BAR ===================== -->
+<div class="top-bar">
+  <div class="top-bar-container">
+    <a href="01_about_us.html">About us</a>
+    <a href="02_contact_us.html">Contact Us</a>
+    <a href="03_eye_care.html">Eye Care</a>
+    <a href="04_new_arrival.html">New Arrivals</a>
+    <a href="05_best_seller.html">Best Sellers</a>
+    <a href="06_offline_store.html">Offline Stores</a>
+    <a href="07_book_app.html">Book Appointment</a>
+    <a href="08_privacy_policy.html">Privacy Policy</a>
+    <a href="09_help.html">Help</a>
+  </div>
+</div>
+
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="main-header">
+  <div class="main-header-container">
+    <a href="index main.html" class="logo">
+  <img src="img0.jpeg" alt="Logo">
+  WAHEGURU AURA OPTIX
+</a>
+    <nav class="main-nav">
+      <div class="dropdown">
+        <a href="#">EYEGLASSES</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Eyeglasses">Men's Eyeglasses</a></li>
+          <li><a href="#Eyeglasses">Women's Eyeglasses</a></li>
+          <li><a href="#Eyeglasses">Computer Glasses</a></li>
+          <li><a href="#Eyeglasses">Kids' Eyeglasses</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">SUNGLASSES</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Sunglasses">Men's Sunglasses</a></li>
+          <li><a href="#Sunglasses">Women's Sunglasses</a></li>
+          <li><a href="#Sunglasses">Power Sunglasses</a></li>
+          <li><a href="#Sunglasses">Sports Sunglasses</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">CONTACTS</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Contacts">Daily Disposable</a></li>
+          <li><a href="#Contacts">Monthly Disposable</a></li>
+          <li><a href="#Contacts">Colored Contact Lenses</a></li>
+          <li><a href="#Contacts">Contact Lens Solution & Care</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">SPECIAL POWER</a>
+        <ul class="dropdown-menu">
+          <li><a href="#SpecialPower">High Power Lenses</a></li>
+          <li><a href="#SpecialPower">Cylinder Power Lenses</a></li>
+          <li><a href="#SpecialPower">Photochromic Lenses</a></li>
+          <li><a href="#SpecialPower">Blue Cut + UV Protection</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">STORES</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Stores">Find a Store Near You</a></li>
+          <li><a href="#Stores">Official Stores</a></li>
+          <li><a href="#Stores">Book Eye Test Appointment</a></li>
+          <li><a href="#Stores">Home Eye Check-up</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="header-icons">
+      <a href="#" class="cart-icon">🛒</a>
+    </div>
+  </div>
+</header>
+
+    <div class="contact-header">
+        <h1>Get In Touch</h1>
+        <p>Whether it’s a style query or an eye checkup, we are here to help.</p>
+    </div>
+
+    <div class="container" style="max-width: 1100px; margin: auto; padding: 0 20px;">
+        <div class="main-container">
+            
+            <div class="info-side">
+                <h2>Contact Information</h2>
+                <div class="info-item">
+                    <h4>Our Location</h4>
+                    <p>123 Heritage Lane, Optical Plaza<br>New Delhi, India</p>
+                </div>
+                <div class="info-item">
+                    <h4>Call Us</h4>
+                    <p>+91 98765 43210</p>
+                </div>
+                <div class="info-item">
+                    <h4>Email Us</h4>
+                    <p>hello@heritageoptical.com</p>
+                </div>
+                <div class="info-item">
+                    <h4>Store Hours</h4>
+                    <p>Mon - Sat: 10 AM to 8 PM<br>Sunday: Closed</p>
+                </div>
+            </div>
+
+            <div class="form-side">
+                <h2>Send Us a Message</h2>
+                <form action="#">
+                    <div class="input-group">
+                        <label>Your Full Name</label>
+                        <input type="text" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="email@example.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label>How can we help?</label>
+                        <textarea rows="4" placeholder="Ask us about frames, lenses, or appointments..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="map-area">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.5657335602!2d77.22732107550012!3d28.6128456756749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2dab96eb813%3A0x4a0d9934211f301d!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div style="text-align: center; padding: 40px; opacity: 0.6; font-size: 0.9rem;">
+            &copy; 2026 WAHEGURU AURA OPTIX.
+        </div>
+    </div>
+
+</body>
+</html>

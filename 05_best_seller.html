@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Best Sellers - Optical Store</title>
+
+<style>
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#f8f5ef;
+    color:#333;
+}
+/* ===================== TOP BAR ===================== */
+
+.top-bar{
+background:#f6f1e7;
+color:#444;
+font-size:13px;
+padding:8px 0;
+}
+
+.top-bar-container{
+max-width:1400px;
+margin:auto;
+text-align:right;
+padding:0 20px;
+}
+
+.top-bar a{
+color:#444;
+text-decoration:none;
+margin:0 8px;
+}
+
+.top-bar a:hover{
+color:#8c7a5b;
+}
+
+
+/* ===================== HEADER ===================== */
+
+.main-header{
+background:#f8f8f7;
+border-bottom:1px solid #e6e6e6;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.main-header-container{
+max-width:1400px;
+margin:auto;
+padding:0 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:75px;
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+color:#8c7a5b;
+text-decoration:none;
+
+display:flex;
+align-items:center;
+gap:1px;
+}
+
+.logo img{
+width:110px;
+height:75px;
+}
+
+
+/* ===================== NAVIGATION ===================== */
+
+.main-nav{
+display:flex;
+gap:35px;
+align-items:center;
+}
+
+.main-nav a{
+text-decoration:none;
+color:#444;
+font-weight:500;
+}
+
+.main-nav a:hover{
+color:#8c7a5b;
+}
+
+
+/* ===================== DROPDOWN ===================== */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown-menu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:#ffffff;
+list-style:none;
+min-width:200px;
+border-radius:8px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+.dropdown-menu li a{
+display:block;
+padding:10px 18px;
+font-size:14px;
+}
+
+.dropdown-menu li a:hover{
+background:#f6f1e7;
+color:#8c7a5b;
+}
+
+/* HERO SECTION */
+.hero{
+    height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Blurred background layer */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+     width: 100%; 
+     height: 100%;
+    background:url(img1.jpeg) no-repeat center/cover;
+    filter: blur(8px); /*Blurs the background image */
+}
+
+.hero-content{
+    background:rgba(0,0,0,0.5);
+    padding:30px;
+    border-radius:10px;
+    position: relative;
+    z-index: 2; /* Places content above the blurred background */
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    margin-bottom:20px;
+}
+
+.btn{
+    padding:12px 25px;
+    background:#e6d3b3;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+    /* transition: property duration timing-function */
+    transition: background 0.5s ease, transform 0.5s ease;
+}
+
+.btn:hover{
+    background:#d4b98f;
+    transform:scale(1.05);
+}
+
+/* PRODUCTS */
+.section{
+    padding:50px;
+    text-align:center;
+}
+
+.section h2{
+    margin-bottom:30px;
+    font-size:32px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    position:relative;
+    /* transition: property duration timing-function */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    /* transition: property duration timing-function */
+    transition: transform 0.5s ease;
+}
+
+.card:hover img{
+    transform:scale(1.1);
+}
+
+.card-content{
+    padding:15px;
+}
+
+.badge{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:#e6d3b3;
+    padding:5px 10px;
+    font-size:12px;
+    border-radius:5px;
+    z-index: 3; /* Ensures badge stays on top of scaled image */
+}
+
+/* FEATURED */
+.featured{
+    padding:50px;
+    text-align:center;
+}
+.featured h2{
+    margin-bottom:35px;
+}
+
+.featured-cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.featured-card{
+    width:300px;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    /* transition: property duration timing-function */
+    transition: transform 0.5s ease;
+}
+
+.featured-card:hover{
+    transform:translateY(-10px);
+}
+
+.featured-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+/* FOOTER */
+footer{
+    background:#cccaca;
+    padding:20px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+    <!-- ===================== TOP BAR ===================== -->
+<div class="top-bar">
+  <div class="top-bar-container">
+    <a href="01_about_us.html">About us</a>
+    <a href="02_contact_us.html">Contact Us</a>
+    <a href="03_eye_care.html">Eye Care</a>
+    <a href="04_new_arrival.html">New Arrivals</a>
+    <a href="05_best_seller.html">Best Sellers</a>
+    <a href="06_offline_store.html">Offline Stores</a>
+    <a href="07_book_app.html">Book Appointment</a>
+    <a href="08_privacy_policy.html">Privacy Policy</a>
+    <a href="09_help.html">Help</a>
+  </div>
+</div>
+
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="main-header">
+  <div class="main-header-container">
+    <a href="index main.html" class="logo">
+  <img src="img0.jpeg" alt="Logo">
+  WAHEGURU AURA OPTIX
+</a>
+    <nav class="main-nav">
+      <div class="dropdown">
+        <a href="#">EYEGLASSES</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Eyeglasses">Men's Eyeglasses</a></li>
+          <li><a href="#Eyeglasses">Women's Eyeglasses</a></li>
+          <li><a href="#Eyeglasses">Computer Glasses</a></li>
+          <li><a href="#Eyeglasses">Kids' Eyeglasses</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">SUNGLASSES</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Sunglasses">Men's Sunglasses</a></li>
+          <li><a href="#Sunglasses">Women's Sunglasses</a></li>
+          <li><a href="#Sunglasses">Power Sunglasses</a></li>
+          <li><a href="#Sunglasses">Sports Sunglasses</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">CONTACTS</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Contacts">Daily Disposable</a></li>
+          <li><a href="#Contacts">Monthly Disposable</a></li>
+          <li><a href="#Contacts">Colored Contact Lenses</a></li>
+          <li><a href="#Contacts">Contact Lens Solution & Care</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">SPECIAL POWER</a>
+        <ul class="dropdown-menu">
+          <li><a href="#SpecialPower">High Power Lenses</a></li>
+          <li><a href="#SpecialPower">Cylinder Power Lenses</a></li>
+          <li><a href="#SpecialPower">Photochromic Lenses</a></li>
+          <li><a href="#SpecialPower">Blue Cut + UV Protection</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">STORES</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Stores">Find a Store Near You</a></li>
+          <li><a href="#Stores">Official Stores</a></li>
+          <li><a href="#Stores">Book Eye Test Appointment</a></li>
+          <li><a href="#Stores">Home Eye Check-up</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="header-icons">
+      <a href="#" class="cart-icon">🛒</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Best Sellers</h1>
+        <p>Our Most Loved Eyewear Collection</p>
+        <button class="btn">Shop Now</button>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Top Selling Frames</h2>
+
+    <div class="products">
+
+        <div class="card">
+            <span class="badge">Best Seller</span>
+            <img src="img21.jpg" alt="Classic Black Frame">
+            <div class="card-content">
+                <h3>Classic Black Frame</h3>
+                <p>₹999</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="badge">Trending</span>
+            <img src="img22.jpg" alt="Golden Aviator">
+            <div class="card-content">
+                <h3>Golden Aviator</h3>
+                <p>₹1299</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img23.jpg" alt="Round Retro">
+            <div class="card-content">
+                <h3>Round Retro</h3>
+                <p>₹899</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img24.jpg" alt="Cat Eye Frame">
+            <div class="card-content">
+                <h3>Cat Eye Frame</h3>
+                <p>₹1099</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img25.jpg" alt="Kids Blue Frame">
+            <div class="card-content">
+                <h3>Kids Blue Frame</h3>
+                <p>₹699</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img26.jpg" alt="Premium Silver">
+            <div class="card-content">
+                <h3>Premium Silver</h3>
+                <p>₹1999</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img27.jpg" alt="Stylish Brown">
+            <div class="card-content">
+                <h3>Stylish Brown</h3>
+                <p>₹1199</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img28.jpg" alt="Transparent Frame">
+            <div class="card-content">
+                <h3>Transparent Frame</h3>
+                <p>₹1399</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img29.jpg" alt="Sport Sunglasses">
+            <div class="card-content">
+                <h3>Sport Sunglasses</h3>
+                <p>₹1599</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img30.jpg" alt="Luxury Frame">
+            <div class="card-content">
+                <h3>Luxury Frame</h3>
+                <p>₹2499</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="featured">
+    <h2>Featured Premium Frames</h2>
+
+    <div class="featured-cards">
+
+        <div class="featured-card">
+            <img src="img31.jpg" alt="Luxury Gold Frame">
+            <div class="card-content">
+                <h3>Luxury Gold Frame</h3>
+                <p>₹2999</p>
+            </div>
+        </div>
+
+        <div class="featured-card">
+            <img src="img32.jpg" alt="Designer Black">
+            <div class="card-content">
+                <h3>Designer Black</h3>
+                <p>₹2799</p>
+            </div>
+        </div>
+
+        <div class="featured-card">
+            <img src="img33.jpg" alt="Elegant Rimless">
+            <div class="card-content">
+                <h3>Elegant Rimless</h3>
+                <p>₹3199</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>📍 Optical Store | 📞 +91 9876543210 | ✉ support@opticalstore.com</p>
+    <p>© 2026 WAHEGURU AURA OPTIX. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

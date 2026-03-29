@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunglasses - WAHEGURU AURA OPTIX</title>
+  <link rel="stylesheet" href="style1.css">
+  <style>
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .product-card {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    .product-card h4 {
+      margin: 10px 0;
+      font-size: 14px;
+      color: #333;
+    }
+    .product-card .brand {
+      color: #666;
+      font-size: 12px;
+      font-style: italic;
+    }
+    .product-card a {
+      text-decoration: none;
+      color: #333;
+    }
+    .products-section h2 {
+      text-align: center;
+      padding: 30px 0 20px 0;
+      font-size: 28px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top Navigation Bar -->
+<div class="top-bar">
+  <div class="top-bar-container">
+    <a href="01_about_us.html">About us</a>
+    <a href="02_contact_us.html">Contact Us</a>
+    <a href="03_eye_care.html">Eye Care</a>
+    <a href="04_new_arrival.html">New Arrivals</a>
+    <a href="05_best_seller.html">Best Sellers</a>
+    <a href="06_offline_store.html">Offline Stores</a>
+    <a href="07_book_app.html">Book Appointment</a>
+    <a href="08_privacy_policy.html">Privacy Policy</a>
+    <a href="09_help.html">Help</a>
+  </div>
+</div>
+
+<!-- Main Header with Navigation -->
+<header class="main-header">
+  <div class="main-header-container">
+    <a href="index main.html" class="logo">
+      <img src="logo.png" alt="Logo">
+      WAHEGURU AURA OPTIX
+    </a>
+    <nav class="main-nav">
+      <!-- EYEGLASSES Dropdown -->
+      <div class="dropdown">
+        <a href="eyeglasses.html">EYEGLASSES</a>
+        <ul class="dropdown-menu">
+          <li><a href="product1.html">Product 1</a></li>
+          <li><a href="product2.html">Product 2</a></li>
+          <li><a href="product3.html">Product 3</a></li>
+          <li><a href="product4.html">Product 4</a></li>
+          <li><a href="product5.html">Product 5</a></li>
+          <li><a href="product6.html">Product 6</a></li>
+          <li><a href="product7.html">Product 7</a></li>
+          <li><a href="product8.html">Product 8</a></li>
+          <li><a href="product9.html">Product 9</a></li>
+          <li><a href="product10.html">Product 10</a></li>
+        </ul>
+      </div>
+
+      <!-- SUNGLASSES Dropdown -->
+      <div class="dropdown">
+        <a href="sunglasses.html" class="active">SUNGLASSES</a>
+        <ul class="dropdown-menu">
+          <li><a href="sg.html">Sunglasses Main</a></li>
+          <li><a href="sg1.html">Sunglasses 1</a></li>
+          <li><a href="sg2.html">Sunglasses 2</a></li>
+          <li><a href="sg3.html">Sunglasses 3</a></li>
+          <li><a href="sg4.html">Sunglasses 4</a></li>
+          <li><a href="sg5.html">Sunglasses 5</a></li>
+          <li><a href="sg6.html">Sunglasses 6</a></li>
+          <li><a href="sg7.html">Sunglasses 7</a></li>
+          <li><a href="sg8.html">Sunglasses 8</a></li>
+          <li><a href="sg9.html">Sunglasses 9</a></li>
+          <li><a href="sg10.html">Sunglasses 10</a></li>
+        </ul>
+      </div>
+
+      <!-- CONTACTS Dropdown -->
+      <div class="dropdown">
+        <a href="contacts.html">CONTACTS</a>
+        <ul class="dropdown-menu">
+          <li><a href="cont1.html">Content 1</a></li>
+          <li><a href="cont2.html">Content 2</a></li>
+          <li><a href="cont3.html">Content 3</a></li>
+          <li><a href="cont4.html">Content 4</a></li>
+          <li><a href="cont5.html">Content 5</a></li>
+          <li><a href="cont6.html">Content 6</a></li>
+          <li><a href="cont7.html">Content 7</a></li>
+          <li><a href="cont8.html">Content 8</a></li>
+          <li><a href="cont9.html">Content 9</a></li>
+          <li><a href="cont10.html">Content 10</a></li>
+        </ul>
+      </div>
+
+      <!-- ALL PRODUCTS Dropdown -->
+      <div class="dropdown">
+        <a href="#">ALL PRODUCTS</a>
+        <ul class="dropdown-menu">
+          <li><a href="product11.html">Product 11</a></li>
+          <li><a href="product12.html">Product 12</a></li>
+          <li><a href="product13.html">Product 13</a></li>
+          <li><a href="product14.html">Product 14</a></li>
+          <li><a href="product15.html">Product 15</a></li>
+          <li><a href="sg10.html">Sunglasses 10</a></li>
+          <li><a href="sg20.html">Sunglasses 20</a></li>
+          <li><a href="sg30.html">Sunglasses 30</a></li>
+        </ul>
+      </div>
+
+      <!-- SPECIAL Dropdown -->
+      <div class="dropdown">
+        <a href="#">SPECIAL</a>
+        <ul class="dropdown-menu">
+          <li><a href="special_powers.html">Special Powers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="payment.html">Payment</a></li>
+          <li><a href="add-to-cart.html">Add to Cart</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="header-icons">
+      <a href="add-to-cart.html" class="cart-icon">🛒</a>
+    </div>
+  </div>
+</header>
+
+<!-- Products Section -->
+<section class="products-section">
+  <h2>Complete Sunglasses Collection</h2>
+  <div class="products-grid">
+    <!-- Sunglasses 1 -->
+    <div class="product-card">
+      <img src="sg1.png" alt="Tortoise Shell Square Sunglasses">
+      <h4><a href="sg1.html">Tortoise Shell Square</a></h4>
+      <p class="brand">Vincent Chase</p>
+    </div>
+
+    <!-- Sunglasses 2 -->
+    <div class="product-card">
+      <img src="sg2.png" alt="Black & Gold Yellow Square">
+      <h4><a href="sg2.html">Black & Gold Yellow Square</a></h4>
+      <p class="brand">Vincent Chase</p>
+    </div>
+
+    <!-- Sunglasses 3 -->
+    <div class="product-card">
+      <img src="sg3.png" alt="">
+      <h4><a href="sg3.html">Sunglasses 3</a></h4>
+      <p class="brand">Vincent Chase</p>
+    </div>
+
+    <!-- Sunglasses 4 -->
+    <div class="product-card">
+      <img src="sg4.png" alt="">
+      <h4><a href="sg4.html">Sunglasses 4</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <!-- Sunglasses 5 -->
+    <div class="product-card">
+      <img src="sg5.png" alt="">
+      <h4><a href="sg5.html">Gold Blue Aviator</a></h4>
+      <p class="brand">Vincent Chase</p>
+    </div>
+
+    <!-- Sunglasses 6 -->
+    <div class="product-card">
+      <img src="sg6.png" alt="">
+      <h4><a href="sg6.html">Black Metal Aviator</a></h4>
+      <p class="brand">Vincent Chase</p>
+    </div>
+
+    <!-- Sunglasses 7 -->
+    <div class="product-card">
+      <img src="sg7.png" alt="">
+      <h4><a href="sg7.html">Sunglasses 7</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <!-- Sunglasses 8 -->
+    <div class="product-card">
+      <img src="sg8.png" alt="">
+      <h4><a href="sg8.html">Black Gradient Aviator</a></h4>
+      <p class="brand">Vincent Chase</p>
+    </div>
+
+    <!-- Sunglasses 9 -->
+    <div class="product-card">
+      <img src="sg9.png" alt="">
+      <h4><a href="sg9.html">Sunglasses 9</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <!-- Sunglasses 10 -->
+    <div class="product-card">
+      <img src="sg10.png" alt="">
+      <h4><a href="sg10.html">Sunglasses 10</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <!-- Sunglasses 11-39 -->
+    <div class="product-card">
+      <img src="sg11.png" alt="">
+      <h4><a href="sg11.html">Sunglasses 11</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg12.png" alt="">
+      <h4><a href="sg12.html">Sunglasses 12</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg13.png" alt="">
+      <h4><a href="sg13.html">Sunglasses 13</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg14.png" alt="">
+      <h4><a href="sg14.html">Sunglasses 14</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg15.png" alt="">
+      <h4><a href="sg15.html">Sunglasses 15</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg16.png" alt="">
+      <h4><a href="sg16.html">Sunglasses 16</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg17.png" alt="">
+      <h4><a href="sg17.html">Sunglasses 17</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg18.png" alt="">
+      <h4><a href="sg18.html">Sunglasses 18</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg19.png" alt="">
+      <h4><a href="sg19.html">Sunglasses 19</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg20.png" alt="">
+      <h4><a href="sg20.html">Sunglasses 20</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg21.png" alt="">
+      <h4><a href="sg21.html">Sunglasses 21</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg22.png" alt="">
+      <h4><a href="sg22.html">Sunglasses 22</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg23.png" alt="">
+      <h4><a href="sg23.html">Sunglasses 23</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg24.png" alt="">
+      <h4><a href="sg24.html">Sunglasses 24</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg25.png" alt="">
+      <h4><a href="sg25.html">Sunglasses 25</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg26.png" alt="">
+      <h4><a href="sg26.html">Sunglasses 26</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg27.png" alt="">
+      <h4><a href="sg27.html">Sunglasses 27</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg28.png" alt="">
+      <h4><a href="sg28.html">Sunglasses 28</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg29.png" alt="">
+      <h4><a href="sg29.html">Sunglasses 29</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg30.png" alt="">
+      <h4><a href="sg30.html">Sunglasses 30</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg31.png" alt="">
+      <h4><a href="sg31.html">Sunglasses 31</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg32.png" alt="">
+      <h4><a href="sg32.html">Sunglasses 32</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg33.png" alt="">
+      <h4><a href="sg33.html">Sunglasses 33</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg34.png" alt="">
+      <h4><a href="sg34.html">Sunglasses 34</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg35.png" alt="">
+      <h4><a href="sg35.html">Sunglasses 35</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg36.png" alt="">
+      <h4><a href="sg36.html">Sunglasses 36</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg37.png" alt="">
+      <h4><a href="sg37.html">Sunglasses 37</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg38.png" alt="">
+      <h4><a href="sg38.html">Sunglasses 38</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+
+    <div class="product-card">
+      <img src="sg39.png" alt="">
+      <h4><a href="sg39.html">Sunglasses 39</a></h4>
+      <p class="brand">Premium Quality</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+
+    <div class="footer-col footer-logo">
+      <h2>WAHEGURU AURA OPTIX</h2>
+      <p>Your trusted eyewear partner. Shop premium eyeglasses, sunglasses, contact lenses & more with home try-on.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="eyeglasses.html">Eyeglasses</a></li>
+        <li><a href="sunglasses.html">Sunglasses</a></li>
+        <li><a href="contacts.html">Contact Lenses</a></li>
+        <li><a href="#">Power Sunglasses</a></li>
+        <li><a href="#">Computer Glasses</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Help & Support</h3>
+      <ul>
+        <li><a href="#">Track Order</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Return & Refund</a></li>
+        <li><a href="#">Cancellation Policy</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <div style="margin-top: 25px;">
+        <h4 style="margin-bottom:10px;">We Accept</h4>
+        <div class="payment-methods">
+          <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa">
+          <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard">
+          <img src="https://img.icons8.com/color/48/000000/rupay.png" alt="Rupay">
+          <img src="https://img.icons8.com/color/48/000000/paytm.png" alt="Paytm">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    © 2026 WAHEGURU AURA OPTIX. All Rights Reserved. 
+    <br style="margin:8px 0;">
+    <a href="#" style="color:#bbb; margin:0 10px;">Privacy Policy</a> • 
+    <a href="#" style="color:#bbb; margin:0 10px;">Terms of Use</a> • 
+    <a href="#" style="color:#bbb; margin:0 10px;">Sitemap</a>
+  </div>
+</footer>
+
+</body>
+</html>

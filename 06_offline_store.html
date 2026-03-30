@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Offline Stores - Optical</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#f8f5ef;
+    color:#333;
+}
+/* ===================== TOP BAR ===================== */
+
+.top-bar{
+background:#f6f1e7;
+color:#444;
+font-size:13px;
+padding:8px 0;
+}
+
+.top-bar-container{
+max-width:1400px;
+margin:auto;
+text-align:right;
+padding:0 20px;
+}
+
+.top-bar a{
+color:#444;
+text-decoration:none;
+margin:0 8px;
+}
+
+.top-bar a:hover{
+color:#8c7a5b;
+}
+
+
+/* ===================== HEADER ===================== */
+
+.main-header{
+background:#f8f8f7;
+border-bottom:1px solid #e6e6e6;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.main-header-container{
+max-width:1400px;
+margin:auto;
+padding:0 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:75px;
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+color:#8c7a5b;
+text-decoration:none;
+
+display:flex;
+align-items:center;
+gap:1px;
+}
+
+.logo img{
+width:110px;
+height:75px;
+}
+
+
+/* ===================== NAVIGATION ===================== */
+
+.main-nav{
+display:flex;
+gap:35px;
+align-items:center;
+}
+
+.main-nav a{
+text-decoration:none;
+color:#444;
+font-weight:500;
+}
+
+.main-nav a:hover{
+color:#8c7a5b;
+}
+
+
+/* ===================== DROPDOWN ===================== */
+
+.dropdown{
+position:relative;
+}
+
+.dropdown-menu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:#ffffff;
+list-style:none;
+min-width:200px;
+border-radius:8px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
+
+.dropdown-menu li a{
+display:block;
+padding:10px 18px;
+font-size:14px;
+}
+
+.dropdown-menu li a:hover{
+background:#f6f1e7;
+color:#8c7a5b;
+}
+
+/* HERO */
+.hero{
+    position:relative;
+    height:70vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:url(img34.jpeg) center/cover;
+    filter:blur(5px);
+    z-index:-1;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+    z-index:-1;
+}
+
+.hero-content{
+    z-index:2;
+}
+
+.btn{
+    padding:12px 25px;
+    background:#e6d3b3;
+    border:none;
+    margin-top:15px;
+    cursor:pointer;
+    transition:0.3s;
+    border-radius:5px;
+}
+
+.btn:hover{
+    background:#d4b98f;
+    transform:scale(1.05);
+}
+
+/* SECTION */
+.section{
+    padding:50px;
+    text-align:center;
+    }
+.section h2{
+    font-size: x-large;
+}
+
+/* STORE CARDS */
+.stores{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:25px;
+    margin-top: 40px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
+}
+
+/* FEATURED */
+.featured{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top: 40px;
+    align-items:center;
+    justify-content:center;
+}
+
+.featured img{
+    width:350px;
+    border-radius:10px;
+}
+
+.featured-text{
+    max-width:400px;
+}
+
+/* SERVICES */
+.services{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:40px ;
+}
+
+.service{
+    width:200px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.service:hover{
+    transform:scale(1.05);
+}
+
+/* WHY US */
+.why{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top: 40px;
+    justify-content:center;
+}
+
+.why-card{
+    width:220px;
+    padding:20px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.why-card:hover{
+    transform:translateY(-10px);
+}
+
+/* FOOTER */
+footer{
+    background:#e6d3b3;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+    <!-- ===================== TOP BAR ===================== -->
+<div class="top-bar">
+  <div class="top-bar-container">
+    <a href="01_about_us.html">About us</a>
+    <a href="02_contact_us.html">Contact Us</a>
+    <a href="03_eye_care.html">Eye Care</a>
+    <a href="04_new_arrival.html">New Arrivals</a>
+    <a href="05_best_seller.html">Best Sellers</a>
+    <a href="06_offline_store.html">Offline Stores</a>
+    <a href="07_book_app.html">Book Appointment</a>
+    <a href="08_privacy_policy.html">Privacy Policy</a>
+    <a href="09_help.html">Help</a>
+  </div>
+</div>
+
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="main-header">
+  <div class="main-header-container">
+    <a href="index main.html" class="logo">
+  <img src="img0.jpeg" alt="Logo">
+  WAHEGURU AURA OPTIX
+</a>
+    <nav class="main-nav">
+      <div class="dropdown">
+        <a href="#">EYEGLASSES</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Eyeglasses">Men's Eyeglasses</a></li>
+          <li><a href="#Eyeglasses">Women's Eyeglasses</a></li>
+          <li><a href="#Eyeglasses">Computer Glasses</a></li>
+          <li><a href="#Eyeglasses">Kids' Eyeglasses</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">SUNGLASSES</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Sunglasses">Men's Sunglasses</a></li>
+          <li><a href="#Sunglasses">Women's Sunglasses</a></li>
+          <li><a href="#Sunglasses">Power Sunglasses</a></li>
+          <li><a href="#Sunglasses">Sports Sunglasses</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">CONTACTS</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Contacts">Daily Disposable</a></li>
+          <li><a href="#Contacts">Monthly Disposable</a></li>
+          <li><a href="#Contacts">Colored Contact Lenses</a></li>
+          <li><a href="#Contacts">Contact Lens Solution & Care</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">SPECIAL POWER</a>
+        <ul class="dropdown-menu">
+          <li><a href="#SpecialPower">High Power Lenses</a></li>
+          <li><a href="#SpecialPower">Cylinder Power Lenses</a></li>
+          <li><a href="#SpecialPower">Photochromic Lenses</a></li>
+          <li><a href="#SpecialPower">Blue Cut + UV Protection</a></li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <a href="#">STORES</a>
+        <ul class="dropdown-menu">
+          <li><a href="#Stores">Find a Store Near You</a></li>
+          <li><a href="#Stores">Official Stores</a></li>
+          <li><a href="#Stores">Book Eye Test Appointment</a></li>
+          <li><a href="#Stores">Home Eye Check-up</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="header-icons">
+      <a href="#" class="cart-icon">🛒</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Visit Our Stores</h1>
+        <p>Find an Optical Store Near You</p>
+        <button class="btn">Explore Locations</button>
+    </div>
+</section>
+
+<!-- STORE LOCATIONS -->
+<section class="section">
+    <h2>Our Store Locations</h2>
+
+    <div class="stores">
+
+        <div class="card">
+            <img src="img35.webp">
+            <div class="card-content">
+                <h3>Delhi Store</h3>
+                <p>Connaught Place, Delhi</p>
+                <p>📞 9876543210</p>
+                <p>10 AM - 9 PM</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img36.jpg">
+            <div class="card-content">
+                <h3>Mumbai Store</h3>
+                <p>Bandra West, Mumbai</p>
+                <p>📞 9876501234</p>
+                <p>10 AM - 9 PM</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img37.jpg">
+            <div class="card-content">
+                <h3>Chandigarh Store</h3>
+                <p>Sector 17, Chandigarh</p>
+                <p>📞 9876512345</p>
+                <p>10 AM - 9 PM</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img38.jpg">
+            <div class="card-content">
+                <h3>Amritsar Store</h3>
+                <p>Hall Bazaar, Amritsar</p>
+                <p>📞 9876598765</p>
+                <p>10 AM - 9 PM</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img39.jpg">
+            <div class="card-content">
+                <h3>Jaipur Store</h3>
+                <p>MI Road, Jaipur</p>
+                <p>📞 9876509876</p>
+                <p>10 AM - 9 PM</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FEATURED STORE -->
+<section class="section">
+    <h2>Featured Flagship Store</h2>
+
+    <div class="featured">
+        <img src="img40.jpg">
+
+        <div class="featured-text">
+            <h3>Delhi Flagship Store</h3>
+            <p>Experience premium eyewear shopping with expert eye testing, modern interiors, and a wide range of frames.</p>
+            <p>📍 Connaught Place, Delhi</p>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+    <h2>Our Services</h2>
+
+    <div class="services">
+        <div class="service">👁 Eye Testing</div>
+        <div class="service">👓 Frame Styling</div>
+        <div class="service">🔍 Lens Consultation</div>
+        <div class="service">🛠 Repair Services</div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="section">
+    <h2>Why Visit Us</h2>
+
+    <div class="why">
+        <div class="why-card">Expert Staff</div>
+        <div class="why-card">Premium Collection</div>
+        <div class="why-card">Latest Trends</div>
+        <div class="why-card">Personalized Service</div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>📍 Optical Store | 📞 +91 9876543210 | ✉ support@waheguruauraoptix.com</p>
+    <p>© 2026 WAHEGURU AURA OPTIX. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

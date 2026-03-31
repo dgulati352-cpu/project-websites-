@@ -5,13 +5,22 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
+:root{
+--brand-primary:#8c7a5b;
+--bg-secondary:#f6f1e7;
+--bg-main:#f7f7f7;
+--text-main:#333;
+--text-secondary:#444;
+--footer-bg:#2f2f2f;
+}
+
 html{
 scroll-behavior:smooth;
 }
 
 body{
-background:#f7f7f7;
-color:#333;
+background:var(--bg-main);
+color:var(--text-main);
 }
 
 .top-bar{
@@ -250,7 +259,7 @@ color:#8c7a5b;
 
 .item p{
 font-size:15px;
-color:#666;
+color:#444;
 margin-bottom:10px;
 }
 

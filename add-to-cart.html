@@ -6,14 +6,14 @@
   <title>Add To Cart</title>
   <style>
     :root {
-      --bg: #f4efe8;
-      --card: #fffdf9;
+      --bg: #f6f1e7;
+      --card: #f6f1e7;
       --ink: #1e1b18;
-      --muted: #6a625a;
-      --line: #d8cfc4;
-      --accent: #0f766e;
-      --accent-dark: #0b5f59;
-      --focus: #f59e0b;
+      --muted: #444;
+      --line: #f6f1e7;
+      --accent: #8c7a5b;
+      --accent-dark: #8c7a5b;
+      --focus: #8c7a5b;
       --danger: #b91c1c;
     }
 
@@ -26,8 +26,8 @@
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 10% 10%, #f8d9b4 0%, transparent 28%),
-        radial-gradient(circle at 90% 80%, #b8e4dc 0%, transparent 32%),
+        radial-gradient(circle at 10% 10%, #f6f1e7 0%, transparent 28%),
+        radial-gradient(circle at 90% 80%, #f6f1e7 0%, transparent 32%),
         var(--bg);
       min-height: 100vh;
       padding: 24px;
@@ -39,7 +39,7 @@
     }
 
     .hero {
-      background: linear-gradient(120deg, #1f2937, #334155);
+      background: linear-gradient(120deg, #333, #333);
       color: #fff;
       border-radius: 18px;
       padding: 28px;
@@ -121,7 +121,7 @@
     textarea,
     select {
       width: 100%;
-      border: 1px solid #c8bfb2;
+      border: 1px solid #f6f1e7;
       border-radius: 10px;
       padding: 10px 12px;
       font: inherit;
@@ -154,7 +154,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      background: #fffcf8;
+      background: #f6f1e7;
     }
 
     .toggle-item input {
@@ -165,8 +165,8 @@
     .summary {
       display: grid;
       gap: 8px;
-      background: #f8fafc;
-      border: 1px dashed #b2c0d2;
+      background: #fafafa;
+      border: 1px dashed #f6f1e7;
       border-radius: 12px;
       padding: 12px;
     }
@@ -180,9 +180,9 @@
 
     .total {
       font-weight: 700;
-      color: #111827;
+      color: #333;
       padding-top: 8px;
-      border-top: 1px solid #d7e0eb;
+      border-top: 1px solid #f6f1e7;
     }
 
     .actions {
@@ -266,6 +266,7 @@
       }
     }
   </style>
+<link rel="stylesheet" href="../../responsive-nav.css">
 </head>
 <body>
   <div class="wrapper">
@@ -363,5 +364,7 @@
       </form>
     </section>
   </div>
+<script src="../../responsive-nav.js" defer></script>
 </body>
 </html>
+

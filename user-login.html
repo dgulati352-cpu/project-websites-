@@ -390,6 +390,14 @@
     const loginForm = document.getElementById("loginForm");
     const statusMsg = document.getElementById("statusMsg");
 
+    try {
+      if (localStorage.getItem("auraOptixLoggedIn") === "true") {
+        window.location.replace("index.html");
+      }
+    } catch (error) {
+      // Ignore storage errors and continue with form login.
+    }
+
     loginForm.addEventListener("submit", function (event) {
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("password").value;
@@ -401,8 +409,16 @@
         return;
       }
 
+      event.preventDefault();
+      try {
+        localStorage.setItem("auraOptixLoggedIn", "true");
+      } catch (error) {
+        // Continue navigation even if storage is unavailable.
+      }
+
       statusMsg.textContent = "Login successful. Redirecting...";
       statusMsg.classList.remove("error");
+      window.location.href = "index.html";
     });
   </script>
 </body>

@@ -440,6 +440,20 @@
   </div>
 </footer>
 
+<script>
+  (function () {
+    var isLoggedIn = false;
+    try {
+      isLoggedIn = localStorage.getItem("auraOptixLoggedIn") === "true";
+    } catch (error) {
+      isLoggedIn = false;
+    }
+
+    if (!isLoggedIn) {
+      window.location.replace("user-login.html");
+    }
+  })();
+</script>
 <script src="../../responsive-nav.js" defer></script>
 </body>
 </html>

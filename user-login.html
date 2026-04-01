@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Login | Waheguru Aura Optix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f2eee6;
+      --ink: #211a14;
+      --soft-ink: #5e5449;
+      --primary: #8c7a5b;
+      --primary-dark: #6f5e42;
+      --line: #ddcfb7;
+      --card: rgba(255, 252, 246, 0.9);
+      --ok: #1f7a4f;
+      --error: #bb2f2f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1000px 500px at 10% 10%, #efe3cd 0%, transparent 60%),
+        radial-gradient(800px 500px at 95% 85%, #e4d3b5 0%, transparent 60%),
+        linear-gradient(145deg, #f5f1ea 0%, #efe6d6 100%);
+      display: grid;
+      place-items: center;
+      padding: 18px;
+    }
+
+    .auth-shell {
+      width: min(980px, 100%);
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(80, 60, 28, 0.2);
+      backdrop-filter: blur(5px);
+      animation: card-enter 0.65s ease;
+    }
+
+    .promo {
+      padding: 42px 36px;
+      position: relative;
+      background:
+        linear-gradient(155deg, rgba(58, 45, 31, 0.92), rgba(97, 76, 52, 0.92)),
+        url("cover.jpeg") center/cover;
+      color: #fff8ed;
+      display: grid;
+      align-content: center;
+      gap: 14px;
+    }
+
+    .badge {
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .promo h1 {
+      margin: 0;
+      font-size: clamp(1.75rem, 4vw, 2.45rem);
+      line-height: 1.16;
+      text-wrap: balance;
+    }
+
+    .promo p {
+      margin: 0;
+      color: #efe7dc;
+      max-width: 32ch;
+      line-height: 1.55;
+    }
+
+    .promo ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 7px;
+      color: #f8efe1;
+      font-size: 0.94rem;
+    }
+
+    .auth {
+      padding: 36px;
+      background: linear-gradient(160deg, rgba(255, 252, 246, 0.95), rgba(252, 247, 238, 0.97));
+    }
+
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .brand {
+      color: var(--primary-dark);
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .back {
+      font-size: 0.88rem;
+      color: var(--soft-ink);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    h2 {
+      margin: 2px 0 6px;
+      font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+      color: #261e17;
+    }
+
+    .subtitle {
+      margin: 0 0 24px;
+      color: var(--soft-ink);
+      font-size: 0.94rem;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    label {
+      font-size: 0.85rem;
+      color: #54493f;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 13px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(140, 122, 91, 0.18);
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: -2px;
+    }
+
+    .remember {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.86rem;
+      color: #5b5147;
+    }
+
+    .remember input {
+      width: auto;
+      margin: 0;
+      accent-color: var(--primary);
+    }
+
+    .meta a {
+      color: var(--primary-dark);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .cta {
+      border: 0;
+      border-radius: 13px;
+      padding: 12px 16px;
+      font: inherit;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      background: linear-gradient(125deg, var(--primary), #aa9470);
+      color: #fff;
+      box-shadow: 0 12px 24px rgba(111, 94, 66, 0.28);
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+    }
+
+    .or {
+      text-align: center;
+      margin: 6px 0;
+      color: #7a6f63;
+      font-size: 0.85rem;
+      position: relative;
+    }
+
+    .or::before,
+    .or::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 38%;
+      height: 1px;
+      background: #dfd2be;
+    }
+
+    .or::before {
+      left: 0;
+    }
+
+    .or::after {
+      right: 0;
+    }
+
+    .social {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .social button {
+      padding: 11px 10px;
+      border-radius: 12px;
+      border: 1px solid #dbcdb6;
+      background: #fff;
+      font: inherit;
+      font-size: 0.87rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: #4e4338;
+    }
+
+    .social button:hover {
+      border-color: var(--primary);
+      color: #2f261e;
+    }
+
+    .create {
+      margin-top: 18px;
+      text-align: center;
+      color: #5f5449;
+      font-size: 0.9rem;
+    }
+
+    .create a {
+      color: var(--primary-dark);
+      font-weight: 800;
+      text-decoration: none;
+      margin-left: 4px;
+    }
+
+    .status {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: var(--ok);
+      min-height: 1.2em;
+    }
+
+    .status.error {
+      color: var(--error);
+    }
+
+    @keyframes card-enter {
+      from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.99);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .auth-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .promo {
+        min-height: 220px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .auth,
+      .promo {
+        padding: 22px;
+      }
+
+      .social {
+        grid-template-columns: 1fr;
+      }
+
+      .meta {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="auth-shell" aria-label="User login interface">
+    <section class="promo" aria-hidden="true">
+      <span class="badge">WAHEGURU AURA OPTIX</span>
+      <h1>Welcome back to your clear-view account.</h1>
+      <p>Sign in to track orders, save prescriptions, and checkout faster on every visit.</p>
+      <ul>
+        <li>View order history and invoice details</li>
+        <li>Save frame sizes and lens preferences</li>
+        <li>Get member-only launch notifications</li>
+      </ul>
+    </section>
+
+    <section class="auth">
+      <div class="top-row">
+        <a class="brand" href="index.html">AURA OPTIX</a>
+        <a class="back" href="index.html">Back to home</a>
+      </div>
+
+      <h2>User Login</h2>
+      <p class="subtitle">Use your registered email and password to continue.</p>
+
+      <form id="loginForm" action="index.html" method="get">
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" required placeholder="name@example.com" autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" required minlength="6" placeholder="Enter your password" autocomplete="current-password">
+        </div>
+
+        <div class="meta">
+          <label class="remember" for="rememberMe">
+            <input id="rememberMe" name="rememberMe" type="checkbox">
+            Keep me signed in
+          </label>
+          <a href="09_help.html">Forgot password?</a>
+        </div>
+
+        <button class="cta" type="submit">LOGIN TO ACCOUNT</button>
+
+        <p class="or">or continue with</p>
+
+        <div class="social" aria-label="Social login buttons">
+          <button type="button">Google</button>
+          <button type="button">Facebook</button>
+        </div>
+
+        <p class="create">New here?<a href="02_contact_us.html">Create account</a></p>
+        <p class="status" id="statusMsg" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const loginForm = document.getElementById("loginForm");
+    const statusMsg = document.getElementById("statusMsg");
+
+    loginForm.addEventListener("submit", function (event) {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      if (!email || password.length < 6) {
+        event.preventDefault();
+        statusMsg.textContent = "Please enter a valid email and password.";
+        statusMsg.classList.add("error");
+        return;
+      }
+
+      statusMsg.textContent = "Login successful. Redirecting...";
+      statusMsg.classList.remove("error");
+    });
+  </script>
+</body>
+</html>
